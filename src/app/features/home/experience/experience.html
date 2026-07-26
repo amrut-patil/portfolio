@@ -1,0 +1,59 @@
+<section class="section" id="experience">
+  <div class="container">
+    <app-section-header index="C" title="Experience" drawingNo="AP-003" scale="1:1" subtitle="Career timeline, most recent first." />
+
+    <div class="timeline">
+      @for (company of companies; track company.name) {
+        <div class="timeline__entry">
+          <div class="timeline__rail">
+            <span class="timeline__dot" [class.timeline__dot--current]="company.current"></span>
+            <span class="timeline__line"></span>
+          </div>
+
+          <div class="timeline__card">
+            <div class="timeline__card-head">
+              <h3 class="timeline__company">
+                {{ company.name }}
+                @if (company.current) {
+                  <span class="mono timeline__badge">CURRENT</span>
+                }
+              </h3>
+              <span class="mono timeline__duration">{{ company.totalDuration }}</span>
+            </div>
+            <p class="timeline__location mono">{{ company.location }}</p>
+
+            <ul class="timeline__roles">
+              @for (role of company.roles; track role.role) {
+                <li class="timeline__role">
+                  <span class="timeline__role-title">{{ role.role }}</span>
+                  <span class="mono timeline__role-dates">{{ role.dateRange }}</span>
+                </li>
+              }
+            </ul>
+
+            <ul class="timeline__bullets">
+              @for (bullet of company.bullets; track bullet) {
+                <li>{{ bullet }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="education">
+      <span class="mono education__label">EDUCATION</span>
+      <div class="education__grid">
+        @for (entry of education; track entry.school) {
+          <div class="education__item">
+            <span class="mono education__years">{{ entry.years }}</span>
+            <div>
+              <p class="education__degree">{{ entry.degree }}</p>
+              <p class="education__school">{{ entry.school }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

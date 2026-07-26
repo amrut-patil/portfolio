@@ -1,0 +1,18 @@
+<section class="section" id="skills">
+  <div class="container">
+    <app-section-header index="B" title="Skills" drawingNo="AP-002" scale="NTS" subtitle="Core technical capability, grouped by layer of the stack." />
+
+    <div class="skills__grid">
+      @for (group of groups; track group.category) {
+        <div class="skills__group">
+          <span class="mono skills__group-label">{{ group.category }}</span>
+          <ul class="skills__list">
+            @for (skill of group.skills; track skill) {
+              <li class="skills__chip">{{ skill }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+<section class="hero" id="top">
+  <div class="container hero__inner">
+    <div class="hero__frame">
+      <span class="hero__corner hero__corner--tl mono">FIG. 01</span>
+      <span class="hero__corner hero__corner--tr mono">PROFILE ELEVATION</span>
+
+      <p class="hero__eyebrow mono">// AVAILABLE FOR SENIOR FRONTEND &amp; FULL-STACK ROLES</p>
+
+      <h1 class="hero__name">
+        {{ profile.name }}
+      </h1>
+
+      <p class="hero__title mono">{{ profile.title }}</p>
+
+      <p class="hero__tagline">{{ profile.tagline }}</p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" routerLink="/" fragment="projects">View Projects</a>
+        <a class="btn btn--ghost" routerLink="/" fragment="contact">Get in Touch</a>
+        <a class="btn btn--ghost" [href]="profile.resumeUrl" download>
+          Download Resume
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero__social">
+        <a [href]="profile.social.linkedin" target="_blank" rel="noopener noreferrer" class="mono">IN — LinkedIn</a>
+        <a [href]="profile.social.github" target="_blank" rel="noopener noreferrer" class="mono">GH — GitHub</a>
+        <span class="mono hero__location">{{ profile.social.location }}</span>
+      </div>
+
+      <span class="hero__corner hero__corner--bl mono">15+ YRS EXP</span>
+      <span class="hero__corner hero__corner--br mono">REV. 2026.07</span>
+    </div>
+  </div>
+</section>

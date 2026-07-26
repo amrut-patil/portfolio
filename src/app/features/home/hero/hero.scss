@@ -1,0 +1,125 @@
+.hero {
+  padding: 96px 0 72px;
+
+  @media (max-width: 640px) {
+    padding: 56px 0 48px;
+  }
+}
+
+.hero__frame {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 56px 48px;
+  background: linear-gradient(180deg, var(--surface) 0%, transparent 100%);
+
+  @media (max-width: 640px) {
+    padding: 40px 22px 36px;
+  }
+}
+
+.hero__corner {
+  position: absolute;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+
+  &--tl { top: 16px; left: 20px; }
+  &--tr { top: 16px; right: 20px; }
+  &--bl { bottom: 16px; left: 20px; color: var(--accent); }
+  &--br { bottom: 16px; right: 20px; }
+
+  @media (max-width: 560px) {
+    &--tr, &--bl { display: none; }
+  }
+}
+
+.hero__eyebrow {
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+
+.hero__name {
+  font-size: clamp(38px, 7vw, 68px);
+  line-height: 1.05;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.hero__title {
+  font-size: clamp(14px, 2vw, 17px);
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+}
+
+.hero__tagline {
+  font-size: clamp(15px, 2vw, 18px);
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--bg);
+
+  &:hover {
+    background: var(--accent-strong);
+  }
+}
+
+.btn--ghost {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
+
+.hero__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-size: 12px;
+
+  a {
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+.hero__location {
+  color: var(--text-tertiary);
+}

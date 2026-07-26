@@ -1,0 +1,38 @@
+<section class="section blog-page">
+  <div class="container">
+    <app-section-header
+      index="F"
+      title="Blog"
+      drawingNo="AP-006"
+      scale="1:1"
+      subtitle="Notes on Angular architecture, enterprise software, and lessons learned along the way."
+    />
+
+    @if (posts$ | async; as posts) {
+      @if (posts.length === 0) {
+        <div class="blog-empty">
+          <p class="mono">// NO ENTRIES YET</p>
+          <p>Nothing published here yet — check back soon.</p>
+        </div>
+      } @else {
+        <div class="blog-grid">
+          @for (post of posts; track post.slug) {
+            <a class="blog-card" [routerLink]="['/blog', post.slug]">
+              <div class="blog-card__meta mono">
+                <span>{{ post.publishedAt | date: 'MMM d, y' }}</span>
+                <span>{{ post.readingTimeMinutes }} MIN READ</span>
+              </div>
+              <h3 class="blog-card__title">{{ post.title }}</h3>
+              <p class="blog-card__excerpt">{{ post.excerpt }}</p>
+              <ul class="blog-card__tags">
+                @for (tag of post.tags; track tag) {
+                  <li class="mono">{{ tag }}</li>
+                }
+              </ul>
+            </a>
+          }
+        </div>
+      }
+    }
+  </div>
+</section>

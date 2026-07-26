@@ -1,0 +1,43 @@
+<section class="section" id="about">
+  <div class="container">
+    <app-section-header index="A" title="About" drawingNo="AP-001" scale="1:1" />
+
+    <div class="about__grid">
+      <div class="about__copy">
+        @for (paragraph of profile.summary; track paragraph) {
+        <p>{{ paragraph }}</p>
+        }
+      </div>
+
+      <aside class="about__specs">
+        <div class="about__avatar" aria-hidden="true">
+          <span class="mono">AP</span>
+          <span class="about__avatar-tag mono">PHOTO PENDING</span>
+        </div>
+        <span class="mono about__specs-label">SPECIFICATIONS</span>
+        <dl>
+          <div class="about__spec-row">
+            <dt class="mono">Experience</dt>
+            <dd>15+ years</dd>
+          </div>
+          <div class="about__spec-row">
+            <dt class="mono">Location</dt>
+            <dd>{{ profile.social.location }}</dd>
+          </div>
+          <div class="about__spec-row">
+            <dt class="mono">Focus</dt>
+            <dd>Angular · Full Stack</dd>
+          </div>
+          <div class="about__spec-row">
+            <dt class="mono">Email</dt>
+            <dd><a [href]="'mailto:' + profile.social.email">{{ profile.social.email }}</a></dd>
+          </div>
+          <div class="about__spec-row">
+            <dt class="mono">Phone</dt>
+            <dd>{{ profile.social.phone }}</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>

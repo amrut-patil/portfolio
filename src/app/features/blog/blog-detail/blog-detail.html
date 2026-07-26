@@ -1,0 +1,42 @@
+<section class="section">
+  <div class="container container--narrow">
+    @if (post$ | async; as post) {
+      @if (post) {
+        <a routerLink="/blog" class="back-link mono">← BACK TO BLOG</a>
+
+        <div class="post-meta mono">
+          <span>{{ post.publishedAt | date: 'MMMM d, y' }}</span>
+          <span>{{ post.readingTimeMinutes }} MIN READ</span>
+        </div>
+
+        <h1 class="post-title">{{ post.title }}</h1>
+
+        <ul class="post-tags">
+          @for (tag of post.tags; track tag) {
+            <li class="mono">{{ tag }}</li>
+          }
+        </ul>
+
+        <div class="post-body">
+          @for (paragraph of post.content.split('\n\n'); track $index) {
+            @if (paragraph.trim().startsWith('- ')) {
+              <ul class="post-list">
+                @for (item of paragraph.split('\n'); track item) {
+                  <li>{{ item.replace('- ', '') }}</li>
+                }
+              </ul>
+            } @else {
+              <p>{{ paragraph }}</p>
+            }
+          }
+        </div>
+      } @else {
+        <div class="not-found">
+          <p class="mono">// 404</p>
+          <h2>Post not found</h2>
+          <a routerLink="/blog" class="btn btn--ghost">Back to Blog</a>
+        </div>
+      }
+    }
+  </div>
+</section>

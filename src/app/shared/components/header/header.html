@@ -1,0 +1,58 @@
+<header class="site-header" [class.site-header--scrolled]="scrolled()">
+  <div class="container site-header__bar">
+    <a class="brand" routerLink="/" (click)="closeMenu()" aria-label="Amrut Patil — home">
+      <span class="brand__mark mono">AP</span>
+      <span class="brand__coord mono">01°</span>
+    </a>
+
+    <nav class="nav nav--desktop" aria-label="Primary">
+      <ul>
+        @for (link of links; track link.label) {
+          <li>
+            <a
+              [routerLink]="link.routerLink"
+              [fragment]="link.fragment"
+              routerLinkActive="nav__link--active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="nav__link mono"
+            >{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <app-theme-toggle class="theme-toggle--desktop" />
+      <button
+        type="button"
+        class="menu-btn"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="mobile-nav"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="menu-btn__bar" [class.menu-btn__bar--open]="menuOpen()"></span>
+        <span class="menu-btn__bar" [class.menu-btn__bar--open]="menuOpen()"></span>
+        <span class="menu-btn__bar" [class.menu-btn__bar--open]="menuOpen()"></span>
+      </button>
+    </div>
+  </div>
+
+  @if (menuOpen()) {
+    <nav id="mobile-nav" class="nav nav--mobile" aria-label="Primary mobile">
+      <ul>
+        @for (link of links; track link.label) {
+          <li>
+            <a
+              [routerLink]="link.routerLink"
+              [fragment]="link.fragment"
+              (click)="closeMenu()"
+              class="nav__link nav__link--mobile mono"
+            >{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+      <app-theme-toggle />
+    </nav>
+  }
+</header>

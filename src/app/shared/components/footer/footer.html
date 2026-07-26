@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="site-footer__block">
+      <span class="mono site-footer__label">— END OF DRAWING —</span>
+      <p class="site-footer__note">
+        Built with Angular. Designed &amp; developed by {{ profile.name }}.
+      </p>
+    </div>
+
+    <div class="site-footer__links">
+      <a [href]="profile.social.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a [href]="profile.social.github" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a [href]="'mailto:' + profile.social.email">Email</a>
+    </div>
+
+    <div class="site-footer__meta mono">
+      <span>© {{ year }} {{ profile.name }}</span>
+    </div>
+  </div>
+</footer>
