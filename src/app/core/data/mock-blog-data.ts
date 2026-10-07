@@ -17,7 +17,7 @@ I'll be using this space to write about:
 - Angular architecture patterns for large enterprise applications
 - Lessons learned migrating AngularJS applications to modern Angular
 - Practical GraphQL and REST API integration patterns
-- Notes from 15+ years in enterprise software development
+- Notes from 18+ years in enterprise software development
 
 More posts coming soon.`,
     tags: ['Angular', 'Meta'],
