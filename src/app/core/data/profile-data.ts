@@ -25,7 +25,11 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     category: 'Backend',
-    skills: ['Core Java', 'Spring Boot', 'REST APIs', 'GraphQL', 'gRPC', 'WebSockets'],
+    skills: ['Core Java', 'Spring Boot', 'REST APIs', 'GraphQL', 'WebSockets'],
+  },
+  {
+    category: 'Databases',
+    skills: ['MySQL', 'MS SQL Server', 'Oracle', '(Foundational Knowledge)'],
   },
   {
     category: 'Build Tools',
