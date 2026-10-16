@@ -3,9 +3,9 @@ import { Profile, SkillGroup, Company, EducationEntry, Project } from '../models
 export const PROFILE: Profile = {
   name: 'Amrut Patil',
   title: 'Senior Front-End Engineer (Angular) | Full Stack Experience',
-  tagline: '18+ years architecting enterprise web & desktop applications',
+  tagline: 'Architecting enterprise web & desktop applications',
   summary: [
-    'Full Stack Engineer with 18+ years of experience developing and maintaining enterprise applications across web and desktop platforms. Strong expertise in front-end technologies including Angular, AngularJS, TypeScript, JavaScript, HTML, CSS and Delphi, with working experience in back-end development using Core Java, Spring Boot, GraphQL, and REST APIs.',
+    'Full Stack Engineer with experience developing and maintaining enterprise applications across web and desktop platforms. Strong expertise in front-end technologies including Angular, AngularJS, TypeScript, JavaScript, HTML, CSS and Delphi, with working experience in back-end development using Core Java, Spring Boot, GraphQL, and REST APIs.',
     'Experienced in delivering software solutions throughout the development lifecycle — requirements analysis, design, development, testing, deployment, and production support. Skilled in building responsive user interfaces, integrating applications with backend services, and collaborating with cross-functional teams in Agile environments.',
   ],
   social: {
